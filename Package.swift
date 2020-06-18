@@ -36,5 +36,6 @@ let package = Package(
         .testTarget(
             name: "EmojiTests",
             dependencies: ["Emoji"]),
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
