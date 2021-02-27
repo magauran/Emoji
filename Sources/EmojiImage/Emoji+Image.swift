@@ -79,6 +79,9 @@ extension Emoji {
         }
     }
 
+    /// - Parameters:
+    ///   - size: Size in points.
+    ///   - scale: The scale of the screen. The default value is equal to the scale of the main screen.
     public func size(_ size: CGFloat, scale: CGFloat = UIScreen.main.scale) -> ImageContext {
         let image = Self.image(for: self.rawValue, size: size, scale: scale)
         let context = ImageContext(image: image)
