@@ -10,7 +10,6 @@ extension UIImage {
         let renderer = UIGraphicsImageRenderer(size: self.size, format: format)
 
         let image = renderer.image { context in
-            let origin = CGPoint(x: insets.left, y: insets.top)
             self.draw(in: rect)
         }.withRenderingMode(self.renderingMode)
 

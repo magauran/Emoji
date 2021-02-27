@@ -12,30 +12,30 @@ import EmojiImage
 import CoreImage.CIFilterBuiltins
 
 struct ContentView: View {
-    let emoji0: UIImage = Emoji.grinningFaceWithSmilingEyes
+    private let emoji0: UIImage = Emoji.grinningFaceWithSmilingEyes
         .size(500)
         .image
 
-    let emoji1: UIImage = Emoji.guitar
+    private let emoji1: UIImage = Emoji.guitar
         .size(500)
         .inset(by: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
         .background(UIColor.systemTeal)
         .ellipse()
         .image
 
-    let emoji2: UIImage = Emoji.fox
+    private let emoji2: UIImage = Emoji.fox
         .size(500)
         .grayscale(1)
         .image
 
-    let emoji3: UIImage = Emoji.owl
+    private let emoji3: UIImage = Emoji.owl
         .size(500)
         .inset(by: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
         .grayscale(0.5)
         .background(UIColor.systemYellow)
         .image
 
-    let emoji4: UIImage = Emoji.eye
+    private let emoji4: UIImage = Emoji.eye
         .size(500)
         .process(with: Self.blur(radius: 30))
         .image
@@ -44,12 +44,12 @@ struct ContentView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .center, spacing: 24) {
                 Text("Emoji").font(.largeTitle)
-                Image(uiImage: emoji0).resizable().frame(width: 200, height: 200)
-                Image(uiImage: emoji1).resizable().frame(width: 200, height: 200)
-                Image(uiImage: emoji2).resizable().frame(width: 200, height: 200)
-                Image(uiImage: emoji3).resizable().frame(width: 200, height: 200)
-                Image(uiImage: emoji4).resizable().frame(width: 200, height: 200)
-                Image(uiImage: emoji3).resizable().frame(width: 200, height: 200)
+                ForEach(
+                    [emoji0, emoji1, emoji2, emoji3, emoji4],
+                    id: \.self
+                ) {
+                    Image(uiImage: $0).resizable().frame(width: 200, height: 200)
+                }
             }
         }
     }
