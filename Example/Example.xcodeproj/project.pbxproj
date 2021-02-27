@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88A3462325EAD2E400D77EC6 /* Emoji in Frameworks */ = {isa = PBXBuildFile; productRef = 88A3462225EAD2E400D77EC6 /* Emoji */; };
+		88A3462525EAD2E800D77EC6 /* EmojiImage in Frameworks */ = {isa = PBXBuildFile; productRef = 88A3462425EAD2E800D77EC6 /* EmojiImage */; };
 		88F90CA02469E75C00B28937 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F90C9F2469E75C00B28937 /* AppDelegate.swift */; };
 		88F90CA22469E75C00B28937 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F90CA12469E75C00B28937 /* SceneDelegate.swift */; };
 		88F90CA42469E75C00B28937 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F90CA32469E75C00B28937 /* ContentView.swift */; };
 		88F90CA62469E75E00B28937 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F90CA52469E75E00B28937 /* Assets.xcassets */; };
 		88F90CA92469E75E00B28937 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F90CA82469E75E00B28937 /* Preview Assets.xcassets */; };
 		88F90CAC2469E75E00B28937 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F90CAA2469E75E00B28937 /* LaunchScreen.storyboard */; };
-		88F9F753249ACCF10017DB10 /* Emoji in Frameworks */ = {isa = PBXBuildFile; productRef = 88F9F752249ACCF10017DB10 /* Emoji */; };
-		88F9F755249AD33A0017DB10 /* EmojiImage in Frameworks */ = {isa = PBXBuildFile; productRef = 88F9F754249AD33A0017DB10 /* EmojiImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +33,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F9F753249ACCF10017DB10 /* Emoji in Frameworks */,
-				88F9F755249AD33A0017DB10 /* EmojiImage in Frameworks */,
+				88A3462325EAD2E400D77EC6 /* Emoji in Frameworks */,
+				88A3462525EAD2E800D77EC6 /* EmojiImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,8 +104,8 @@
 			);
 			name = Example;
 			packageProductDependencies = (
-				88F9F752249ACCF10017DB10 /* Emoji */,
-				88F9F754249AD33A0017DB10 /* EmojiImage */,
+				88A3462225EAD2E400D77EC6 /* Emoji */,
+				88A3462425EAD2E800D77EC6 /* EmojiImage */,
 			);
 			productName = Example;
 			productReference = 88F90C9C2469E75C00B28937 /* Example.app */;
@@ -360,11 +360,11 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		88F9F752249ACCF10017DB10 /* Emoji */ = {
+		88A3462225EAD2E400D77EC6 /* Emoji */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Emoji;
 		};
-		88F9F754249AD33A0017DB10 /* EmojiImage */ = {
+		88A3462425EAD2E800D77EC6 /* EmojiImage */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = EmojiImage;
 		};

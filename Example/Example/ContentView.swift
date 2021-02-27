@@ -9,36 +9,35 @@
 import SwiftUI
 import Emoji
 import EmojiImage
+import CoreImage.CIFilterBuiltins
 
 struct ContentView: View {
-    let emoji0: UIImage = Emoji.guitar
-        .size(400)
-        .inset(by: UIEdgeInsets(top: 42, left: 42, bottom: 42, right: 42))
-        .background(UIColor.systemYellow)
-        .ellipse()
+    let emoji0: UIImage = Emoji.grinningFaceWithSmilingEyes
+        .size(500)
         .image
 
-    let emoji1: UIImage = Emoji.fox
-        .size(400)
-        .inset(by: UIEdgeInsets(top: 42, left: 42, bottom: 42, right: 42))
-        .grayscale(1)
-        .background(UIColor.systemBlue)
-        .ellipse()
-        .image
-
-    let emoji2: UIImage = Emoji.owl
-        .size(400)
-        .inset(by: UIEdgeInsets(top: 42, left: 42, bottom: 42, right: 42))
-        .grayscale(0.5)
+    let emoji1: UIImage = Emoji.guitar
+        .size(500)
+        .inset(by: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
         .background(UIColor.systemTeal)
+        .ellipse()
         .image
 
-    let emoji3: UIImage = Emoji.fullMoon
-        .size(400)
-        .inset(by: UIEdgeInsets(top: 42, left: 42, bottom: 42, right: 42))
-        .background(.darkGray)
-        .ellipse()
-        .background(UIColor.black)
+    let emoji2: UIImage = Emoji.fox
+        .size(500)
+        .grayscale(1)
+        .image
+
+    let emoji3: UIImage = Emoji.owl
+        .size(500)
+        .inset(by: UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50))
+        .grayscale(0.5)
+        .background(UIColor.systemYellow)
+        .image
+
+    let emoji4: UIImage = Emoji.eye
+        .size(500)
+        .process(with: Self.blur(radius: 30))
         .image
 
     var body: some View {
@@ -49,6 +48,30 @@ struct ContentView: View {
                 Image(uiImage: emoji1).resizable().frame(width: 200, height: 200)
                 Image(uiImage: emoji2).resizable().frame(width: 200, height: 200)
                 Image(uiImage: emoji3).resizable().frame(width: 200, height: 200)
+                Image(uiImage: emoji4).resizable().frame(width: 200, height: 200)
+                Image(uiImage: emoji3).resizable().frame(width: 200, height: 200)
+            }
+        }
+    }
+
+    private static func blur(radius: Float) -> (UIImage) -> UIImage {
+        return { image in
+            guard let currentCGImage = image.cgImage else { return image }
+            let currentCIImage = CIImage(cgImage: currentCGImage)
+
+            let filter = CIFilter.gaussianBlur()
+            filter.inputImage = currentCIImage
+            filter.radius = radius
+
+            guard let outputImage = filter.outputImage else { return image }
+
+            let context = CIContext()
+
+            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent) {
+                let processedImage = UIImage(cgImage: cgimg)
+                return processedImage
+            } else {
+                return image
             }
         }
     }
