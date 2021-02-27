@@ -3,18 +3,15 @@ import Emoji
 
 extension UIImage {
     func inset(by insets: UIEdgeInsets) -> UIImage {
-        let cgSize = CGSize(
-            width: self.size.width + insets.left + insets.right,
-            height: self.size.height + insets.top + insets.bottom
-        )
+        let rect = CGRect(origin: .zero, size: self.size).inset(by: insets)
 
         let format = UIGraphicsImageRendererFormat()
         format.scale = self.scale
-        let renderer = UIGraphicsImageRenderer(size: cgSize, format: format)
+        let renderer = UIGraphicsImageRenderer(size: self.size, format: format)
 
         let image = renderer.image { context in
             let origin = CGPoint(x: insets.left, y: insets.top)
-            self.draw(at: origin)
+            self.draw(in: rect)
         }.withRenderingMode(self.renderingMode)
 
         return image
