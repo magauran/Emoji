@@ -164,6 +164,11 @@ let emoji = Emoji.eye
 1. Create more built-in image processings
 2. Find a way to get a high-quality images
 
+## Example
+
+To view the sample app open `Emoji.workspace` and run `Example` target.
+You also can use SwiftUI preview canvas in Example/ContentView.swift` file.
+
 ## Other awesome repos
 1. https://github.com/onmyway133/Smile
 2. https://github.com/isaced/ISEmojiView
