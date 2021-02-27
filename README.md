@@ -30,7 +30,7 @@ Library for creating UIImage from Emoji.
 
 ### Why would this be useful?
 
-1. Designers like to use Emoji in the app interface, but the AppStore may reject the app if emojis are used as an image. [[1]](https://www.theverge.com/2018/2/8/16992830/apple-emoji-crackdown-cross-platform-apps-slack-whatsapp)
+1. Designers like to use Emoji in the app interface, but the AppStore may reject the app if emojis are used as a prerendered images. [[1]](https://www.theverge.com/2018/2/8/16992830/apple-emoji-crackdown-cross-platform-apps-slack-whatsapp)
 
 From App Store Review Guidelines:
 > 4.5.6 Apps may use Unicode characters that render as Apple emoji in their app and app metadata. Apple emoji may not be used on other platforms or embedded directly in your app binary.
